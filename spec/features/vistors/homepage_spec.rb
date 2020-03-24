@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'Visitor' do
-  describe 'on the home page' do
-    it 'can see a list of tutorials' do
+RSpec.describe 'As a Visitor' do
+  describe 'When I visit the home page' do
+    it 'I can see a list of tutorials' do
       tutorial1 = create(:tutorial)
       tutorial2 = create(:tutorial)
 
