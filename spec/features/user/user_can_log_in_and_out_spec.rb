@@ -56,4 +56,21 @@ describe 'User' do
 
     expect(page).to have_content("Looks like your email or password is invalid")
   end
+
+
+	it 'can not make two users with the same log in' do
+		user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0)
+
+		visit '/users/new'
+
+		fill_in "user_email", with: "user@email.com"
+		fill_in "user_first_name", with: "Users"
+		fill_in "user_last_name", with: "Userson"
+		fill_in "user_password", with: "password1"
+		fill_in "user_password_confirmation", with: "password1"
+
+		click_on "Create Account"
+
+		expect(page).to have_content("Username already exists")
+	end
 end
