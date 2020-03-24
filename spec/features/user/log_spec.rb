@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'User' do
-  it 'user can sign in', :vcr do
+RSpec.describe 'As a User' do
+  it 'I user can sign in', :vcr do
     user = create(:user)
 
     visit '/'
@@ -21,7 +21,7 @@ describe 'User' do
     expect(page).to have_content(user.last_name)
   end
 
-  it 'can log out', :js, :vcr do
+  it 'I can log out', :js, :vcr do
     user = create(:user)
 
     visit login_path
@@ -42,7 +42,7 @@ describe 'User' do
     expect(page).to have_content('SIGN IN')
   end
 
-  it 'is shown an error when incorrect info is entered', :vcr do
+  it 'I am shown an error when incorrect info is entered', :vcr do
     user = create(:user)
     fake_email = "email@email.com"
     fake_password = "123"
@@ -58,7 +58,7 @@ describe 'User' do
   end
 
 
-	it 'can not make two users with the same log in' do
+	it 'I can not make two users with the same log in' do
 		user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0)
 
 		visit '/users/new'
