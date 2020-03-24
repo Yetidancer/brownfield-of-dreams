@@ -29,5 +29,6 @@ module PersonalProject
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+		config.relative_url_root
   end
 end
