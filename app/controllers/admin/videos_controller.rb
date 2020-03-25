@@ -15,7 +15,6 @@ class Admin::VideosController < Admin::BaseController
       video     = tutorial.videos.new(new_video_params.merge(thumbnail: thumbnail))
 
       video.save
-
       flash[:success] = "Successfully created video."
     rescue # Sorry about this. We should get more specific instead of swallowing all errors.
       flash[:error] = "Unable to create video."
