@@ -7,8 +7,8 @@ RSpec.describe 'As a Visitor' do
 
 			visit '/tutorials'
 
-			expect(page).to have_content(Turtorial.first)
-			expect(page).to have_content(Turtorial.last)
+			expect(page).to have_content(Tutorial.first.title)
+			expect(page).to have_content(Tutorial.last.title)
 		end
 	end
 end
