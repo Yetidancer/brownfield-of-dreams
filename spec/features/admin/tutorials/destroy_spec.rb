@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'As a Admin' do
 	describe "I can delete a tutorial" do
-	  scenario "and it should no longer exist" do
+	  it "and it should no longer exist" do
 	    admin = create(:admin)
 	    create_list(:tutorial, 2)
 
