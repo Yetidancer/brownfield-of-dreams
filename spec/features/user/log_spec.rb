@@ -56,7 +56,4 @@ RSpec.describe 'As a User' do
 
     expect(page).to have_content("Looks like your email or password is invalid")
   end
-
-
-
 end
