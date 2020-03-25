@@ -2,11 +2,6 @@ language: ruby
 ruby:
 - 2.4.1
 
-os: osx
-
-env:
-- ENV['RAILS_ENV'] = 'test'
-
 services:
 - postgresql
 
@@ -16,6 +11,9 @@ before_script:
 - nvm use v11.12.0
 - yarn add stimulus
 
-test:
-adapter: postgresql
-database: travis_ci_test
+env:
+  - ENV['RAILS_ENV'] = 'test'
+
+# test:
+# adapter: postgresql
+# database: travis_ci_test
