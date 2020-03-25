@@ -4,6 +4,9 @@ ruby:
 
 os: osx
 
+env:
+  - DB=postgres
+
 services:
   - postgresql
 
