@@ -13,7 +13,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'webpacker', '~> 3.5'
-gem 'faraday'
 
 gem 'yt', '~> 0.29.1'
 gem 'google-api-client'
@@ -39,9 +38,7 @@ group :development, :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'awesome_print'
-  gem 'webmock'
   gem 'simplecov'
-  gem 'vcr'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
@@ -49,6 +46,11 @@ end
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+end
+
+group :test do
+	gem 'webmock'
+	gem 'vcr'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
