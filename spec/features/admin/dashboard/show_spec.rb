@@ -9,6 +9,8 @@ RSpec.describe 'As a Admin' do
 	    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@admin)
 
 	    visit "/admin/dashboard"
+
+			
 		end
 
 	  it "see all tutorials" do
@@ -80,6 +82,27 @@ RSpec.describe 'As a Admin' do
 			expect(page).to have_link("<THIRD REPO NAME>")
 			expect(page).to have_link("<FOURTH REPO NAME>")
 			expect(page).to have_link("<FITH REPO NAME>")
+		end
+
+		it 'I Do not see any GIT HUB repositories if I do not have a github token' do
+			admin3 = create(:admin)
+
+			click_on "Log Out"
+
+			expect(current_path).to eq("/")
+
+			click_on "Sign In"
+
+			expect(current_path).to eq("/login")
+
+			fill_in 'session[email]', with: admin3.email
+			fill_in 'session[password]', with: admin3.password
+
+			click_on 'Log In'
+
+			expect(current_path).to eq(dashboard_path)
+
+			expect(page).to have_content("Log into Github")
 		end
 	end
 end
