@@ -12,7 +12,7 @@ RSpec.describe 'As a Admin' do
 
 			json_response = File.read('spec/fixtures/zeke_git_hub_repos.json')
 			stub_request(:get, "https://developer.github.com/v3/repos/#list-your-repositories").
-        to_return(status: 200, body: json_rsponse)
+        to_return(status: 200, body: json_response)
 
 			stub_request(:get, "https://developer.github.com/v3/repos/#list-user-repositories").
         to_return(status: 200, body: "404 Wrong Path")
@@ -23,7 +23,7 @@ RSpec.describe 'As a Admin' do
 	    expect(page).to have_css(".admin-tutorial-card", count: 2)
 	  end
 
-		it "I see a link to log into GitHub if I am not currently logged in" do
+		xit "I see a link to log into GitHub if I am not currently logged in" do
 
 			expect(page).to have_link("Log into Github")
 
@@ -39,7 +39,7 @@ RSpec.describe 'As a Admin' do
 			expect(page).to have_link("<FITH REPO NAME>")
 		end
 
-		it "I see a link to log into GitHub if I am not currently logged in, and I do not see this path." do
+		xit "I see a link to log into GitHub if I am not currently logged in, and I do not see this path." do
 
 			expect(page).to have_link("Log into Github")
 
@@ -55,7 +55,7 @@ RSpec.describe 'As a Admin' do
 			expect(page).not_to have_link("<FITH REPO NAME>")
 		end
 
-		it 'I only see my repositories not that of another user' do
+		xit 'I only see my repositories not that of another user' do
 			admin2 = create(:admin)
 
 			click_on "Log Out"
@@ -89,7 +89,7 @@ RSpec.describe 'As a Admin' do
 			expect(page).to have_link("<FITH REPO NAME>")
 		end
 
-		it 'I Do not see any GIT HUB repositories if I do not have a github token' do
+		xit 'I Do not see any GIT HUB repositories if I do not have a github token' do
 			admin3 = create(:admin)
 
 			click_on "Log Out"
