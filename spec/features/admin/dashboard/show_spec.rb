@@ -10,7 +10,9 @@ RSpec.describe 'As a Admin' do
 
 	    visit "/admin/dashboard"
 
-			
+			json_response = File.read('spec/fixtures/.json')
+			stub_request(:get, "https://developer.github.com/v3/repos/#list-your-repositories").
+        to_return(status: 200, body: "")
 		end
 
 	  it "see all tutorials" do
