@@ -10,9 +10,12 @@ RSpec.describe 'As a Admin' do
 
 	    visit "/admin/dashboard"
 
-			json_response = File.read('spec/fixtures/.json')
+			json_response = File.read('spec/fixtures/zeke_git_hub_repos.json')
 			stub_request(:get, "https://developer.github.com/v3/repos/#list-your-repositories").
-        to_return(status: 200, body: "")
+        to_return(status: 200, body: json_rsponse)
+
+			stub_request(:get, "https://developer.github.com/v3/repos/#list-user-repositories").
+        to_return(status: 200, body: "404 Wrong Path")
 		end
 
 	  it "see all tutorials" do
