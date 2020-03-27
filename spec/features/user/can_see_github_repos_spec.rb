@@ -98,7 +98,7 @@ feature 'user can see their repos' do
 		expect(current_path).to eq(dashboard_path)
 
 		visit '/dashboard'
-
+	
 		expect(page).to have_content("Github")
 		expect(page).to have_css(".follower")
 		expect(page).to have_link("sasloan")
