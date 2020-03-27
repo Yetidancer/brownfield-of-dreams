@@ -1,7 +1,11 @@
-class GithubReposService
-  def user_info(token)
+class GithubService
+  def user_repos(token)
     get_json("user/repos", token).first(5)
   end
+
+	def user_followers(token)
+		get_json("user/followers", token)
+	end
 
   private
 

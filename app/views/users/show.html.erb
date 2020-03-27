@@ -17,5 +17,12 @@
         <%= link_to "#{repo[:name]}", repo[:html_url] %>
       </section>
     <% end %>
+
+		<h4>Followers</h4>
+		<% @followers.each do |follower| %>
+		<section class='follower'>
+			<%= link_to "#{follower[:login]}", follower[:html_url] %>
+		</section>
+		<% end %>
   <% end %>
 </section>
