@@ -24,5 +24,12 @@
 			<%= link_to "#{follower[:login]}", follower[:html_url] %>
 		</section>
 		<% end %>
+
+		<h4>Following</h4>
+		<% current_user.following.each do |followed| %>
+		<section class='following'>
+			<%= link_to "#{followed[:login]}", followed[:html_url] %>
+		</section>
+		<% end %>
   <% end %>
 </section>

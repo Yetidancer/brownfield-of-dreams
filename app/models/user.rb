@@ -16,4 +16,8 @@ class User < ApplicationRecord
 	def followers
 		GithubService.new.user_followers(token)
 	end
+
+	def following
+		GithubService.new.user_following(token)
+	end
 end
