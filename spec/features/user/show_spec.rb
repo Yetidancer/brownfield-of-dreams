@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'As a User' do
-	describe 'When I log in I am sent to my dashboard' do
+	describe 'When I log in I am sent to my dashboard', :vcr do
 		it 'I can see Account Details' do
 
 			user = create(:user)

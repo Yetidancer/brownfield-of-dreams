@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'user can see their repos' do
 
   it 'user logs in and visits dashboard', :vcr do
-    user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password")
+    user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: "3ee7561ad7909cb0da148d6a29e89b05e8f2952a")
 
     visit '/'
 
