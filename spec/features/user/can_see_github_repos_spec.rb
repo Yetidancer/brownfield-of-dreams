@@ -80,4 +80,27 @@ feature 'user can see their repos' do
 
     expect(page).to_not have_link("D_and_Z_Pet_Place")
   end
+
+	it 'User logs into their Dashboard and can see followers', :vcr do
+		user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: "e52edaa49e5c6803db5fe206886d00be0a86ac00")
+
+		visit '/'
+
+		click_on "Sign In"
+
+		expect(current_path).to eq(login_path)
+
+		fill_in 'session[email]', with: user.email
+		fill_in 'session[password]', with: user.password
+
+		click_on 'Log In'
+
+		expect(current_path).to eq(dashboard_path)
+
+		visit '/dashboard'
+
+		expect(page).to have_content("Github")
+		expect(page).to have_css(".follower")
+		expect(page).to have_link("sasloan")
+	end
 end
