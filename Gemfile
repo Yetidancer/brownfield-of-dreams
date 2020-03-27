@@ -39,9 +39,7 @@ group :development, :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'awesome_print'
-  gem 'webmock'
   gem 'simplecov'
-  gem 'vcr'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
@@ -49,6 +47,11 @@ end
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'As a User' do
 	describe 'I can create a new user' do
-		it 'by visiting the new form and filling it out correctly' do
+		it 'by visiting the new form and filling it out correctly', :vcr do
 
 			visit '/users/new'
 
