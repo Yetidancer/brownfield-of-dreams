@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'user can see their repos' do
 
   it 'user logs in and visits dashboard', :vcr do
-    user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: "3ee7561ad7909cb0da148d6a29e89b05e8f2952a")
+    user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: "e52edaa49e5c6803db5fe206886d00be0a86ac00")
 
     visit '/'
 
@@ -31,8 +31,8 @@ feature 'user can see their repos' do
   end
 
   it 'user logs in and visits dashboard and does not see the previous log ins repos', :vcr do
-    user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: "8fcd32841e5a71543e7ab0515e83c4528e6da8f8")
-    user2 = create(:user, email: "person1@example.com", first_name: "Cheesey", last_name: "Geckoy", password: "password1", token: "17247f81c2c38c6ea384d2a8d078103943340471")
+    user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: "e52edaa49e5c6803db5fe206886d00be0a86ac00")
+    user2 = create(:user, email: "person1@example.com", first_name: "Cheesey", last_name: "Geckoy", password: "password1", token: "8daf0a5907d802104e4d7a8b1e01938806a96d39")
 
     visit '/'
 
