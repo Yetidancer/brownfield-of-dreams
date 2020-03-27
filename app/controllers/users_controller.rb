@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @repos = GithubService.new.user_repos(current_user.token)
-		@followers = GithubService.new.user_followers(current_user.token)
+    # @repos = GithubService.new.user_repos(current_user.token)
+		# @followers = GithubService.new.user_followers(current_user.token)
   end
 
   def new

@@ -12,14 +12,14 @@
   </section>
   <% if !current_user.token.nil? %>
     <h2>Github</h2>
-    <% @repos.each do |repo| %>
+    <% current_user.repos.each do |repo| %>
       <section class="repo">
         <%= link_to "#{repo[:name]}", repo[:html_url] %>
       </section>
     <% end %>
 
 		<h4>Followers</h4>
-		<% @followers.each do |follower| %>
+		<% current_user.followers.each do |follower| %>
 		<section class='follower'>
 			<%= link_to "#{follower[:login]}", follower[:html_url] %>
 		</section>

@@ -7,4 +7,13 @@ class User < ApplicationRecord
   validates_presence_of :first_name
   enum role: [:default, :admin]
   has_secure_password
+
+
+	def repos
+		GithubService.new.user_repos(token)
+	end
+
+	def followers
+		GithubService.new.user_followers(token)
+	end
 end
