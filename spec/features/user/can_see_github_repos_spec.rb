@@ -27,5 +27,4 @@ feature 'user can see their repos' do
       expect(page).to have_link("monster_shop_1911")
     end
   end
-
 end
