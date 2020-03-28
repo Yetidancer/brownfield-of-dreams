@@ -20,14 +20,14 @@ http_interactions:
       code: 401
       message: Unauthorized
     headers:
-      Server:
-      - GitHub.com
       Date:
-      - Fri, 27 Mar 2020 00:34:35 GMT
+      - Sat, 28 Mar 2020 17:28:54 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
       - '83'
+      Server:
+      - GitHub.com
       Status:
       - 401 Unauthorized
       X-Github-Media-Type:
@@ -35,9 +35,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '56'
+      - '51'
       X-Ratelimit-Reset:
-      - '1585272369'
+      - '1585419968'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -57,14 +57,14 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       Vary:
-      - Accept-Encoding, Accept, X-Requested-With, X-GitHub-OpenAPI
+      - Accept-Encoding, Accept, X-Requested-With
       X-Github-Request-Id:
-      - F044:542A:AAF8CB:126B9A0:5E7D4A1B
+      - ECC3:069B:489306:613173:5E7F8955
     body:
       encoding: UTF-8
       string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: null
-  recorded_at: Fri, 27 Mar 2020 00:34:35 GMT
+  recorded_at: Sat, 28 Mar 2020 17:28:53 GMT
 - request:
     method: get
     uri: https://api.github.com/user/repos
@@ -85,14 +85,14 @@ http_interactions:
       code: 401
       message: Unauthorized
     headers:
-      Server:
-      - GitHub.com
       Date:
-      - Fri, 27 Mar 2020 00:34:35 GMT
+      - Sat, 28 Mar 2020 17:28:54 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
       - '83'
+      Server:
+      - GitHub.com
       Status:
       - 401 Unauthorized
       X-Github-Media-Type:
@@ -100,9 +100,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '55'
+      - '50'
       X-Ratelimit-Reset:
-      - '1585272368'
+      - '1585419968'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -122,12 +122,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       Vary:
-      - Accept-Encoding, Accept, X-Requested-With, X-GitHub-OpenAPI
+      - Accept-Encoding, Accept, X-Requested-With
       X-Github-Request-Id:
-      - F049:442B:BA4DF9:13563F3:5E7D4A1B
+      - ECC8:590B:4B13AB:64097E:5E7F8956
     body:
       encoding: UTF-8
       string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: null
-  recorded_at: Fri, 27 Mar 2020 00:34:35 GMT
+  recorded_at: Sat, 28 Mar 2020 17:28:54 GMT
 recorded_with: VCR 5.1.0

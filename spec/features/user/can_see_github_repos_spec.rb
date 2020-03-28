@@ -32,7 +32,7 @@ feature 'user can see their repos' do
 
   it 'user logs in and visits dashboard and does not see the previous log ins repos', :vcr do
     user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: "8fcd32841e5a71543e7ab0515e83c4528e6da8f8")
-    user2 = create(:user, email: "person1@example.com", first_name: "Cheesey", last_name: "Geckoy", password: "password1", token: "17247f81c2c38c6ea384d2a8d078103943340471")
+    user2 = create(:user, email: "person1@example.com", first_name: "Cheesey", last_name: "Geckoy", password: "password1", token: "252e5a8a5b7c6f71ca824f2b306d3488ef7eb4cf")
 
     visit '/'
 
@@ -98,6 +98,7 @@ feature 'As a user that has not logged into Gihhub yet' do
 							 "name" => "Sebastian Sloan"
 				}}})
 	end
+
 	it 'If a user does not have a github token then they can set one up in the dashboard' do
 		user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: ENV["TEST_KEY"])
 
@@ -120,4 +121,5 @@ feature 'As a user that has not logged into Gihhub yet' do
 
 		expect(user.token).to eq(ENV["TEST_KEY"])
 	end
+end
 end
