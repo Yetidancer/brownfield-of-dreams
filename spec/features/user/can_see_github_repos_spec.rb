@@ -81,8 +81,25 @@ feature 'user can see their repos' do
     expect(page).to_not have_link("D_and_Z_Pet_Place")
   end
 
+feature 'As a user that has not logged into Gihhub yet' do
+	before :each do
+		OmniAuth.config.mock_auth[:github] = nil
+		OmniAuth.config.test_mode = true
+		OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
+			{"provider" => "github",
+			 "info" => {"name" => "Sebastian Sloan"},
+			 "credentials" =>
+			 		{"token" => ENV["TEST_KEY"],
+					 "expires" => false},
+			 "extra"=>
+			 		{"raw_info" =>
+							{"login" => "sasloan",
+							 "html_url" => "https://github.com/sasloan",
+							 "name" => "Sebastian Sloan"
+				}}})
+	end
 	it 'If a user does not have a github token then they can set one up in the dashboard' do
-		user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: nil)
+		user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: ENV["TEST_KEY"])
 
 		visit '/'
 
@@ -100,5 +117,7 @@ feature 'user can see their repos' do
 		expect(page).to have_button("Connect to Github")
 
 		click_on "Connect to Github"
+
+		expect(user.token).to eq(ENV["TEST_KEY"])
 	end
 end
