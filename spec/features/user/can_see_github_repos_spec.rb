@@ -80,4 +80,25 @@ feature 'user can see their repos' do
 
     expect(page).to_not have_link("D_and_Z_Pet_Place")
   end
+
+	it 'If a user does not have a github token then they can set one up in the dashboard' do
+		user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: nil)
+
+		visit '/'
+
+		click_on "Sign In"
+
+		expect(current_path).to eq(login_path)
+
+		fill_in 'session[email]', with: user.email
+		fill_in 'session[password]', with: user.password
+
+		click_on 'Log In'
+
+		expect(current_path).to eq(dashboard_path)
+
+		expect(page).to have_button("Connect to Github")
+
+		click_on "Connect to Github"
+	end
 end
