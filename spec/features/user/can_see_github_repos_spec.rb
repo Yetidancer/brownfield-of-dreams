@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'user can see their repos' do
 
   it 'user logs in and visits dashboard', :vcr do
-    user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: "5f97eedf03d39274a13390bf847665f3cb471605")
+    user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: ENV["YET_GITHUB_TOKEN"])
 
     visit '/'
 
@@ -32,8 +32,8 @@ feature 'user can see their repos' do
 
   it 'user logs in and visits dashboard and does not see the previous log ins repos', :vcr do
 
-    user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: "5f97eedf03d39274a13390bf847665f3cb471605")
-    user2 = create(:user, email: "person1@example.com", first_name: "Cheesey", last_name: "Geckoy", password: "password1", token: "f58dcd9eec130a2539fc968a0a93854bb5afd793")
+    user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: ENV["YET_GITHUB_TOKEN"])
+    user2 = create(:user, email: "person1@example.com", first_name: "Cheesey", last_name: "Geckoy", password: "password1", token: ENV["SAS_GITHUB_TOKEN"])
 
     visit '/'
 
@@ -127,7 +127,7 @@ feature 'As a user that has not logged into Gihhub yet' do
 	end
 
 	it 'User logs into their Dashboard and can see the other users it is following', :vcr do
-		user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: "5f97eedf03d39274a13390bf847665f3cb471605")
+		user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: ENV["YET_GITHUB_TOKEN"])
 
 		visit '/'
 
