@@ -17,12 +17,19 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 401
+      message: Unauthorized
     headers:
+      Date:
+<<<<<<< HEAD
+      - Sat, 28 Mar 2020 17:28:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '83'
       Server:
       - GitHub.com
-      Date:
+=======
       - Fri, 27 Mar 2020 20:03:10 GMT
       Content-Type:
       - application/json; charset=utf-8
@@ -256,11 +263,19 @@ http_interactions:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
+>>>>>>> master
       Status:
-      - 200 OK
+      - 401 Unauthorized
+      X-Github-Media-Type:
+      - github.v3; format=json
       X-Ratelimit-Limit:
-      - '5000'
+      - '60'
       X-Ratelimit-Remaining:
+<<<<<<< HEAD
+      - '49'
+      X-Ratelimit-Reset:
+      - '1585419968'
+=======
       - '4972'
       X-Ratelimit-Reset:
       - '1585341201'
@@ -280,6 +295,7 @@ http_interactions:
       Link:
       - <https://api.github.com/user/repos?page=2>; rel="next", <https://api.github.com/user/repos?page=2>;
         rel="last"
+>>>>>>> master
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -298,7 +314,17 @@ http_interactions:
       - origin-when-cross-origin, strict-origin-when-cross-origin
       Content-Security-Policy:
       - default-src 'none'
+      Vary:
+      - Accept-Encoding, Accept, X-Requested-With
       X-Github-Request-Id:
+<<<<<<< HEAD
+      - ECDB:682E:4867C8:60F1D2:5E7F8957
+    body:
+      encoding: UTF-8
+      string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
+    http_version: null
+  recorded_at: Sat, 28 Mar 2020 17:28:54 GMT
+=======
       - E53C:52B6:7AF8C:155231:5E7E5BFF
     body:
       encoding: ASCII-8BIT
@@ -456,4 +482,5 @@ http_interactions:
       string: '[{"login":"holmesm8","id":12539215,"node_id":"MDQ6VXNlcjEyNTM5MjE1","avatar_url":"https://avatars0.githubusercontent.com/u/12539215?v=4","gravatar_id":"","url":"https://api.github.com/users/holmesm8","html_url":"https://github.com/holmesm8","followers_url":"https://api.github.com/users/holmesm8/followers","following_url":"https://api.github.com/users/holmesm8/following{/other_user}","gists_url":"https://api.github.com/users/holmesm8/gists{/gist_id}","starred_url":"https://api.github.com/users/holmesm8/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/holmesm8/subscriptions","organizations_url":"https://api.github.com/users/holmesm8/orgs","repos_url":"https://api.github.com/users/holmesm8/repos","events_url":"https://api.github.com/users/holmesm8/events{/privacy}","received_events_url":"https://api.github.com/users/holmesm8/received_events","type":"User","site_admin":false},{"login":"meghanstovall","id":42551404,"node_id":"MDQ6VXNlcjQyNTUxNDA0","avatar_url":"https://avatars0.githubusercontent.com/u/42551404?v=4","gravatar_id":"","url":"https://api.github.com/users/meghanstovall","html_url":"https://github.com/meghanstovall","followers_url":"https://api.github.com/users/meghanstovall/followers","following_url":"https://api.github.com/users/meghanstovall/following{/other_user}","gists_url":"https://api.github.com/users/meghanstovall/gists{/gist_id}","starred_url":"https://api.github.com/users/meghanstovall/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/meghanstovall/subscriptions","organizations_url":"https://api.github.com/users/meghanstovall/orgs","repos_url":"https://api.github.com/users/meghanstovall/repos","events_url":"https://api.github.com/users/meghanstovall/events{/privacy}","received_events_url":"https://api.github.com/users/meghanstovall/received_events","type":"User","site_admin":false},{"login":"tayjames","id":47490116,"node_id":"MDQ6VXNlcjQ3NDkwMTE2","avatar_url":"https://avatars0.githubusercontent.com/u/47490116?v=4","gravatar_id":"","url":"https://api.github.com/users/tayjames","html_url":"https://github.com/tayjames","followers_url":"https://api.github.com/users/tayjames/followers","following_url":"https://api.github.com/users/tayjames/following{/other_user}","gists_url":"https://api.github.com/users/tayjames/gists{/gist_id}","starred_url":"https://api.github.com/users/tayjames/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/tayjames/subscriptions","organizations_url":"https://api.github.com/users/tayjames/orgs","repos_url":"https://api.github.com/users/tayjames/repos","events_url":"https://api.github.com/users/tayjames/events{/privacy}","received_events_url":"https://api.github.com/users/tayjames/received_events","type":"User","site_admin":false},{"login":"sasloan","id":51456013,"node_id":"MDQ6VXNlcjUxNDU2MDEz","avatar_url":"https://avatars3.githubusercontent.com/u/51456013?v=4","gravatar_id":"","url":"https://api.github.com/users/sasloan","html_url":"https://github.com/sasloan","followers_url":"https://api.github.com/users/sasloan/followers","following_url":"https://api.github.com/users/sasloan/following{/other_user}","gists_url":"https://api.github.com/users/sasloan/gists{/gist_id}","starred_url":"https://api.github.com/users/sasloan/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/sasloan/subscriptions","organizations_url":"https://api.github.com/users/sasloan/orgs","repos_url":"https://api.github.com/users/sasloan/repos","events_url":"https://api.github.com/users/sasloan/events{/privacy}","received_events_url":"https://api.github.com/users/sasloan/received_events","type":"User","site_admin":false},{"login":"eamouzou","id":54334799,"node_id":"MDQ6VXNlcjU0MzM0Nzk5","avatar_url":"https://avatars1.githubusercontent.com/u/54334799?v=4","gravatar_id":"","url":"https://api.github.com/users/eamouzou","html_url":"https://github.com/eamouzou","followers_url":"https://api.github.com/users/eamouzou/followers","following_url":"https://api.github.com/users/eamouzou/following{/other_user}","gists_url":"https://api.github.com/users/eamouzou/gists{/gist_id}","starred_url":"https://api.github.com/users/eamouzou/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/eamouzou/subscriptions","organizations_url":"https://api.github.com/users/eamouzou/orgs","repos_url":"https://api.github.com/users/eamouzou/repos","events_url":"https://api.github.com/users/eamouzou/events{/privacy}","received_events_url":"https://api.github.com/users/eamouzou/received_events","type":"User","site_admin":false},{"login":"kathleen-carroll","id":54904827,"node_id":"MDQ6VXNlcjU0OTA0ODI3","avatar_url":"https://avatars2.githubusercontent.com/u/54904827?v=4","gravatar_id":"","url":"https://api.github.com/users/kathleen-carroll","html_url":"https://github.com/kathleen-carroll","followers_url":"https://api.github.com/users/kathleen-carroll/followers","following_url":"https://api.github.com/users/kathleen-carroll/following{/other_user}","gists_url":"https://api.github.com/users/kathleen-carroll/gists{/gist_id}","starred_url":"https://api.github.com/users/kathleen-carroll/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/kathleen-carroll/subscriptions","organizations_url":"https://api.github.com/users/kathleen-carroll/orgs","repos_url":"https://api.github.com/users/kathleen-carroll/repos","events_url":"https://api.github.com/users/kathleen-carroll/events{/privacy}","received_events_url":"https://api.github.com/users/kathleen-carroll/received_events","type":"User","site_admin":false}]'
     http_version: null
   recorded_at: Fri, 27 Mar 2020 20:03:13 GMT
+>>>>>>> master
 recorded_with: VCR 5.1.0
