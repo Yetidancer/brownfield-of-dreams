@@ -14,6 +14,11 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
   config.filter_sensitive_data("<YOUTUBE_API_KEY>") { ENV['YOUTUBE_API_KEY'] }
+  config.filter_sensitive_data("<GITHUB_CLIENT_ID>") { ENV['GITHUB_CLIENT_ID'] }
+  config.filter_sensitive_data("<GITHUB_CLIENT_SECRET>") { ENV['GITHUB_CLIENT_SECRET'] }
+  config.filter_sensitive_data("<TEST_KEY>") { ENV['TEST_KEY'] }
+  config.filter_sensitive_data("<SAS_GITHUB_TOKEN>") { ENV['SAS_GITHUB_TOKEN'] }
+  config.filter_sensitive_data("<YET_GITHUB_TOKEN>") { ENV['YET_GITHUB_TOKEN'] }
 end
 
 
