@@ -27,8 +27,8 @@ Contributers:
   `Brown Field of Dreams` after you have found the perfect spot lets fork and clone!! 
   
   When you know where you want to store the device then scroll to the top of this page and click on the `Fork` button
-    
-  <img width="1342" alt="Screen Shot 2020-03-29 at 11 37 30 AM" src="https://user-      images.githubusercontent.com/51456013/77856087-f1e9c180-71b1-11ea-8e61-7d44e4550d2a.png">
+
+<img width="1342" alt="Screen Shot 2020-03-29 at 11 37 30 AM" src="https://user-images.githubusercontent.com/51456013/77856281-45104400-71b3-11ea-8cea-41d5afd868ec.png">
 
   Next We will want to clone your new copy of the `BFD` to your local device. In order to do this. first you must copy the 
   SSH. To do this click on the `Clone or download` button and then copy the link that pops up!! 
