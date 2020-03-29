@@ -26,10 +26,24 @@ Contributers:
   Let's get started! So first off you need to find a place in your local directory that you would like to keep the
   `Brown Field of Dreams` after you have found the perfect spot lets fork and clone!! 
   
-  When you know where you want to store the device then scroll to the top of this page and click on the `fork` button
+  When you know where you want to store the device then scroll to the top of this page and click on the `Fork` button
     
-<img width="1342" alt="Screen Shot 2020-03-29 at 11 37 30 AM" src="https://user-images.githubusercontent.com/51456013/77856087-f1e9c180-71b1-11ea-8e61-7d44e4550d2a.png">
+  <img width="1342" alt="Screen Shot 2020-03-29 at 11 37 30 AM" src="https://user-      images.githubusercontent.com/51456013/77856087-f1e9c180-71b1-11ea-8e61-7d44e4550d2a.png">
 
+  Next We will want to clone your new copy of the `BFD` to your local device. In order to do this. first you must copy the 
+  SSH. To do this click on the `Clone or download` button and then copy the link that pops up!! 
+
+  <img width="1293" alt="Screen Shot 2020-03-29 at 11 43 07 AM" src="https://user-images.githubusercontent.com/51456013/77856166-88b67e00-71b2-11ea-8c5b-258f842c64d2.png">
+  
+  Once you have this then lets go to your terminal and in the special spot you want to store this project we are going to run
+  the following command.
+  
+  
+<img width="1214" alt="Screen Shot 2020-03-29 at 11 45 57 AM" src="https://user-images.githubusercontent.com/51456013/77856217-e2b74380-71b2-11ea-942e-5f18bf50272e.png">
+
+  You will notice that after the `git clone` command the rest of the code is simply what you copied from GitHub! Now once you
+  press `return` then boom!!! you have `BFD` on your local device and you can mess with it all you want!!
+  
 
   
   
