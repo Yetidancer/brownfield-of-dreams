@@ -12,7 +12,7 @@ Contributers:
   see how to view imported youtube videos and much much more. We hope that you enjoy our project, should you have any
   questions, comments or concerns all feedback is welcome in the comment section below! 
   
-  To view our project in production click [here](https://brownfield-dream.herokuapp.com/) .
+  To view our project in production [click here](https://brownfield-dream.herokuapp.com/) .
   
  ```diff
   WARNING!! The seeded users that are provided in this app are only for this app please do not attempt to use them to 
