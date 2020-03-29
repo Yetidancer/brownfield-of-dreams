@@ -3,3 +3,7 @@
 <p align="center">
   <img width="460" height="300" src="https://cdn.business2community.com/wp-content/uploads/2014/07/field-of-dreams.jpg">
 </p>
+
+Contributers: 
+[Sebastian Sloan](https://github.com/sasloan) , [Ezekiel Clark](https://github.com/Yetidancer)
+
