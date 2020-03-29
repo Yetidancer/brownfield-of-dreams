@@ -44,6 +44,32 @@ Contributers:
   You will notice that after the `git clone` command the rest of the code is simply what you copied from GitHub! Now once you
   press `return` then boom!!! you have `BFD` on your local device and you can mess with it all you want!!
   
+  We Do still have a little bit more to work on however. Now that you have the start of the set up done now we need to set up 
+  your local enviornment. 
+  
+  Lets begin by running `bundle install` This will pull all the gems from your new gem file and download them so you have
+  everything you need to oporate this app. 
+  
+  once that is complete you will need to set up your database. 
+  
+  first you will need to run the following commands with all success: 
+  
+  `rake db:create`
+  `rake db:migrate`
+  `rake db:seed`
+  
+  once this is done then your Database will be set up and ready for you to use! 
+  
+  Now that the Database and the gems are all installed and ready to go we need to set up some API keys so that your `BFD` 
+  works the way that it is expected to. In order to do this you will need to set up API Keys with both youtube and git hub. 
+  If you have these set up then great!!! But if you do not then you should see this documentation to set them up before 
+  continuing with the `Brown Field of Dreams` set up process.
+  
+  YouTube API key set up: [how to setup a youtube api](https://www.youtube.com/watch?v=pP4zvduVAqo)
+  GitHub CLIENT_ID and SECRET_ID: [how to set up a gihub access point](https://www.knowband.com/blog/user-manual/get-github-client-id-client-secret-api-details/)
+  
+  
+  
 
   
   
