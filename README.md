@@ -17,6 +17,20 @@ Contributers:
   connect to any external provider. If you do then the seeded user will have access to your github, youtube ect. . . info
   this is not good. when interacting with the app please make your own user. Thank you.
  ```
+ 
+ <h2> Setup </h2>
+ 
+  In this next section we will teach you how to setup the `Brown Field of Dreams` on your own local device. As always if you 
+  have any feedback on how to make this setup better please leave a comment below. 
+  
+  Let's get started! So first off you need to find a place in your local directory that you would like to keep the
+  `Brown Field of Dreams` after you have found the perfect spot lets fork and clone!! 
+  
+  When you know where you want to store the device then scroll to the top of this page and click on the `fork` button
+    
+<img width="1342" alt="Screen Shot 2020-03-29 at 11 37 30 AM" src="https://user-images.githubusercontent.com/51456013/77856087-f1e9c180-71b1-11ea-8e61-7d44e4550d2a.png">
+
+
   
   
   
