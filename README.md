@@ -14,8 +14,8 @@ Contributers:
   
   ```diff
   - WARNING!! The seeded users that are provided in this app are only for this app please do not attempt to use them to 
-  connect to any external provider. If you do then the seeded user will have access to your github, youtube ect. . . info
-  this is not good. when interacting with the app please make your own user. Thank you.
+  - connect to any external provider. If you do then the seeded user will have access to your github, youtube ect. . . info
+  - this is not good. when interacting with the app please make your own user. Thank you.
   ```
   
   
