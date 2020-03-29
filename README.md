@@ -66,6 +66,8 @@ Contributers:
   continuing with the `Brown Field of Dreams` set up process.
   
   YouTube API key set up: [how to setup a youtube api](https://www.youtube.com/watch?v=pP4zvduVAqo)
+  
+  
   GitHub CLIENT_ID and SECRET_ID: [how to set up a gihub access point](https://www.knowband.com/blog/user-manual/get-github-client-id-client-secret-api-details/)
   
   
