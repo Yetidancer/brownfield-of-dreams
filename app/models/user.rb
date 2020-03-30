@@ -20,4 +20,10 @@ class User < ApplicationRecord
 	def following
 		GithubService.new.user_following(token)
 	end
+
+	def bookmarked_segments
+	videos.joins(:tutorial)
+				.group('tutorials.id, videos.id')
+				.order('tutorials.id, videos.position')
+	end
 end
