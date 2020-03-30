@@ -8,16 +8,19 @@ class User < ApplicationRecord
   enum role: [:default, :admin]
   has_secure_password
 
+  def github_id
+    @github_id ||= GithubService.new.user_github_id(token)
+  end
 
 	def repos
-		GithubService.new.user_repos(token)
+		@repos ||= GithubService.new.user_repos(token)
 	end
 
 	def followers
-		GithubService.new.user_followers(token)
+		@followers ||= GithubService.new.user_followers(token)
 	end
 
 	def following
-		GithubService.new.user_following(token)
+		@following ||= GithubService.new.user_following(token)
 	end
 end

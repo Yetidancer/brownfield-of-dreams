@@ -4,7 +4,7 @@ feature 'user can see their repos' do
 
   it 'user logs in and visits dashboard', :vcr do
     user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: ENV["YET_GITHUB_TOKEN"])
-    
+
     visit '/'
 
     click_on "Sign In"
@@ -116,10 +116,11 @@ feature 'As a user that has not logged into Gihhub yet' do
 
 		expect(current_path).to eq(dashboard_path)
 
-
 		visit '/dashboard'
 
     click_on "Connect to Github"
+
+    user.reload
 
 		expect(page).to have_content("Github")
 		expect(page).to have_css(".follower")
