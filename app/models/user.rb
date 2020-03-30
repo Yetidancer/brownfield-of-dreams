@@ -8,6 +8,10 @@ class User < ApplicationRecord
   enum role: [:default, :admin]
   has_secure_password
 
+  def in_system(username)
+    User.all.find {|user| user.github_username == username}
+  end
+
   def github_id
     @github_id ||= GithubService.new.user_github_id(token)
   end

@@ -20,15 +20,18 @@
 
 		<h4>Followers</h4>
 		<% current_user.followers.each do |follower| %>
-        <section class='follower'>
+        <section id="follower-<%=follower[:login]%>">
     			<%= link_to "#{follower[:login]}", follower[:html_url] %>
+          <% if current_user.in_system(follower[:login]) %>
+            <p>button</p>
+          <% end %>
     		</section>
 
     <% end %>
 
 		<h4>Following</h4>
   		<% current_user.following.each do |followed| %>
-  		<section class='following'>
+  		<section id="following-<%=followed[:login]%>">
   			<%= link_to "#{followed[:login]}", followed[:html_url] %>
   		</section>
 		<% end %>
