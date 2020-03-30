@@ -26,5 +26,28 @@ RSpec.describe User, type: :model do
       expect(admin.role).to eq('admin')
       expect(admin.admin?).to be_truthy
     end
+	end
+
+	describe 'methods' do
+    it '.bookmarked_segments' do
+      user = create(:user, token: ENV['TEST_KEY'])
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      tutorial = create(:tutorial)
+      tutorial_2 = create(:tutorial)
+
+      video_1 = create(:video, title: 'The Bunny Ears Technique', tutorial: tutorial, position: 1)
+      video_2 = create(:video, title: 'The Bunny Ears Technique: Part 2', tutorial: tutorial, position: 0)
+      video_3 = create(:video, title: 'The Bunny Ears Technique: Part 3', tutorial: tutorial_2, position: 1)
+      video_4 = create(:video, title: 'The Bunny Ears Technique: Part 4', tutorial: tutorial_2, position: 0)
+
+      create(:user_video, user: user, video: video_1)
+      create(:user_video, user: user, video: video_2)
+      create(:user_video, user: user, video: video_3)
+      create(:user_video, user: user, video: video_4)
+
+      result = user.bookmarked_segments
+      expect(result).to eq([video_2, video_1, video_4, video_3])
+    end
   end
 end
