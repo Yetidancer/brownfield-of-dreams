@@ -1,7 +1,5 @@
-Hello <%= @new_user %>
+Hello <%= @email_info[:user].first_name %>
 
 	This email has been sent to you so that you can activate your new
 	Brown Field of Dreams account. please click the link below to activate your
 	account.
-
-		<%= button_to "Activate Account", "/authorization", method: :patch %> 

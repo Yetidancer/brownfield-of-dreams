@@ -29,6 +29,8 @@ RSpec.describe User, type: :model do
 	end
 
 	describe 'methods' do
+		subject { create :user }
+
     it '.bookmarked_segments' do
       user = create(:user, token: ENV['TEST_KEY'])
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
@@ -49,5 +51,10 @@ RSpec.describe User, type: :model do
       result = user.bookmarked_segments
       expect(result).to eq([video_2, video_1, video_4, video_3])
     end
+
+		xit 'sends an email' do
+	 		expect { subject.send_instructions }
+		 .to change { ActionMailer::Base.deliveries.count }.by(1)
+ 		end
   end
 end

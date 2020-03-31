@@ -1,18 +1,24 @@
 require "rails_helper"
 
 RSpec.describe NewUserNotifierMailer, type: :mailer do
-  describe "New User Noftifier" do
-	 	let(:mail) {NewUserNotifierMailer.mail}
-
-		it 'renders the headers' do
-			expect(mail.subject).to eq("Activate your new account.")
-			expect(mail.to).to eq(["to@example.org"])
+	describe 'inform' do
+		before :each do
+			@user = create(:user, token: ENV['TEST_KEY'])
+			@email_info = {user: @user, message: "Hello World"}
 		end
 
-		it "renders the body" do
-			expect(mail.body.encoded).to match("This email has been sent to you so that you can activate your new
-			Brown Field of Dreams account. please click the link below to activate your
-			account.")
-		end
-	end
+		let(:mail) { described_class.inform(@email_info, @user).deliver_now }
+
+    it 'renders the subject' do
+      expect(mail.subject).to eq("#{@email_info[:user].first_name}, Please Authenticate your account.")
+    end
+
+    it 'renders the receiver email' do
+      expect(mail.to).to eq([@email_info[:user].email])
+    end
+
+    it 'renders the sender email' do
+      expect(mail.from).to eq(['admin@brownfieldofdreams.com'])
+    end
+  end
 end
