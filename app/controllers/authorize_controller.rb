@@ -8,6 +8,6 @@ class NotificationsController < ApplicationController
                  }
     NewUserNotifierMailer.inform(email_info, user_email).deliver_now
     flash[:notice] = "An email has been sent to your inbox. please check it now."
-    redirect_to dashboard_path
+    redirect_to '/dashboard'
   end
 end
