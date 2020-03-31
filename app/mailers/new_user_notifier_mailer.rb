@@ -1,8 +1,10 @@
 class NewUserNotifierMailer < ApplicationMailer
-	def inform(info, user_email)
-		@user = info[:user]
-		@message = info[:message]
-		@new_user = info[:new_user]
-		mail(to: user_email, subject: "Activate your new account.")
-	end
+	default from: 'noreply@company.com'
+
+  def instructions
+    @name = current_user.name
+    @confirmation_url = confirmation_url(current_user)
+
+    mail to: current_user.email, subject: 'Activate your new account.'
+  end
 end

@@ -20,4 +20,8 @@ class User < ApplicationRecord
 	def following
 		GithubService.new.user_following(token)
 	end
+
+	def send_instructions
+	 	NewUserNotifierMailer.instructions(self).deliver_now
+ 	end
 end
