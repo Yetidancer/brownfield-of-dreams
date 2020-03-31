@@ -49,4 +49,6 @@ Rails.application.routes.draw do
 	post '/authorization', to: 'authorize#create'
 
   post '/friendships', to: 'friendships#create'
+
+	patch '/activate/:user_email', to: 'activate#update'
 end
