@@ -52,8 +52,11 @@ RSpec.describe User, type: :model do
       expect(result).to eq([video_2, video_1, video_4, video_3])
     end
 
-		xit 'sends an email' do
-	 		expect { subject.send_instructions }
+		it 'sends an email' do
+			user = create(:user, token: ENV['TEST_KEY'])
+			email_info = {user: user, message: "Hello World"}
+
+	 		expect { subject.send_inform(email_info, user) }
 		 .to change { ActionMailer::Base.deliveries.count }.by(1)
  		end
   end

@@ -43,7 +43,7 @@ class User < ApplicationRecord
 				.order('tutorials.id, videos.position')
 	end
 
-	def send_instructions
-	 	NewUserNotifierMailer.instructions(self).deliver_now
+	def send_inform(email_info, user_email)
+	 	NewUserNotifierMailer.inform(email_info, user_email).deliver_now
  	end
 end
