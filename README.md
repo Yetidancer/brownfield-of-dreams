@@ -12,6 +12,8 @@ Contributers:
   see how to view imported youtube videos and much much more. We hope that you enjoy our project, should you have any
   questions, comments or concerns all feedback is welcome in the comment section below! 
   
+  To view our project in production [click here](https://brownfield-dream.herokuapp.com/) .
+  
  ```diff
   WARNING!! The seeded users that are provided in this app are only for this app please do not attempt to use them to 
   connect to any external provider. If you do then the seeded user will have access to your github, youtube ect. . . info
@@ -70,6 +72,36 @@ Contributers:
   
   GitHub CLIENT_ID and SECRET_ID: [how to set up a gihub access point](https://www.knowband.com/blog/user-manual/get-github-client-id-client-secret-api-details/)
   
+  For Testing purposes you will also need to setup a github token to make sure the test program is working. If you are not
+  interested in the making the test program pass then this is not required but strongly encouraged. 
+
+  GitHub Access Token: [how to get a github access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
+  
+  Once you have all your tokens set up and ready to go then we move on to the next section. We need a safe place in the app to
+  store all your new access keys. Lets start by running 
+  
+  `figaro install` 
+  
+  This will create some cool things for us to work with most important is the `application.yml` file that will safely hold all
+  your new keys!!! your `application.yml` file exists in your config so follow `/config/application.yml` to get to it. once 
+  you are inside your `application.yml` file you will need to fill in all keys you just made from above. When you are done it
+  should look something like this. 
+
+  <img width="1049" alt="Screen Shot 2020-03-29 at 12 09 56 PM" src="https://user-images.githubusercontent.com/51456013/77856709-39724c80-71b6-11ea-804f-032e82b3d5ae.png">
+  
+  If it does then we are ready to run `rspec`.
+  
+  When the set up is done correctly then you should see this.
+  
+  
+<img width="792" alt="Screen Shot 2020-03-29 at 12 43 26 PM" src="https://user-images.githubusercontent.com/51456013/77857475-e64ec880-71ba-11ea-9c30-3de7dc65e58f.png">
+
+That is the end of your set up process!!!  
+
+<h2> Conclusion </h2> 
+
+  We hope that you enjoy our app!! if you have any questions comments or concerns then please fill free to ask in the comment
+  section below. thank you for your time and intrest. 
   
   
 
