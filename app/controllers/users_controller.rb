@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   def show
-    # @repos = GithubService.new.user_repos(current_user.token)
-		# @followers = GithubService.new.user_followers(current_user.token)
   end
 
   def new
@@ -9,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create(user_params)
+    user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
 			flash[:success] = "Logged in as #{user.first_name} #{user.last_name}"
