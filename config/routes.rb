@@ -47,4 +47,6 @@ Rails.application.routes.draw do
 	get 'auth/:provider/callback', to: 'sessions#update'
 
 	post '/authorization', to: 'authorize#create'
+
+  post '/friendships', to: 'friendships#create'
 end
