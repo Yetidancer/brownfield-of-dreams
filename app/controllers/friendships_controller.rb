@@ -4,8 +4,8 @@ class FriendshipsController < ApplicationController
 
   def create
     require "pry"; binding.pry
-    friend = User.find_by(params[:id])
-    Friendship.create(user_id: current_user.id, friend_id: friend.id)
+    friend = User.find(friendship_params[:friend_id])
+    Friendship.new(friendship_params)
     flash[:notice] = "#{friend.first_name} has been added to your friends list!"
     redirect_to dashboard_path
   end

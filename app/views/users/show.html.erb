@@ -25,7 +25,8 @@
           <% if current_user.in_system(follower[:login]) && !current_user.friends.include?(follower[:login])%>
             <% friend = User.find_by(github_username: follower[:login]) %>
             <%= form_tag "/friendships" do %>
-            <% text_field_tag 'friend_id', "#{friend.id}", :hidden => true %>
+            <% text_field_tag :friend_id, "#{friend.id}", :hidden => true %>
+            <% text_field_tag :user_id, "#{current_user.id}", :hidden => true %>
             <%= submit_tag "Add as Friend" %>
             <% end %>
           <% end %>
