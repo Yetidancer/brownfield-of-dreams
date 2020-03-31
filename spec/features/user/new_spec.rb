@@ -18,7 +18,7 @@ RSpec.describe 'As a User' do
 		end
 
 		it 'I can not make two users with the same log in' do
-			user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0)
+			user = User.create!(email: "user@email.com", password: 'password', first_name:'Jim', last_name: "Smith", role: 0)
 
 			visit '/users/new'
 
