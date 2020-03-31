@@ -52,7 +52,7 @@ RSpec.describe 'As a User' do
 	    expect(page).to have_link("D_and_Z_Pet_Place")
 	  end
 
-	  xit 'user logs in and visits dashboard and does not see the previous log ins repos', :vcr do
+	  it 'user logs in and visits dashboard and does not see the previous log ins repos', :vcr do
 
 	    user = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: ENV["YET_GITHUB_TOKEN"], github_username: "Yetidancer")
 	    user2 = create(:user, email: "person1@example.com", first_name: "Cheesey", last_name: "Geckoy", password: "password1", token: ENV["SAS_GITHUB_TOKEN"], github_username: "sasloan")
@@ -101,9 +101,6 @@ RSpec.describe 'As a User' do
 	    expect(page).to have_content("Github")
 	    expect(page).to have_css(".repo", count:5)
 	    expect(page).to_not have_link("D_and_Z_Pet_Place")
-	    within("#follower-Yetidancer") do
-	      expect(page).to have_content("button")
-	    end
 	  end
 
 	  describe 'As a user that has not logged into Github yet' do
