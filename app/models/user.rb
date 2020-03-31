@@ -11,6 +11,12 @@ class User < ApplicationRecord
   enum role: [:default, :admin]
   has_secure_password
 
+  def friends
+    friendships = Friendship.all.find_all {|friendship| friendship.user_id == current_user.id}
+    friends = friendships.map {|friendship| User.find(friendship.friend_id)}
+    return friends
+  end
+
   def in_system(username)
     User.all.find {|user| user.github_username == username}
   end
