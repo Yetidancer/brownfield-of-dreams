@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'As a Admin' do
-	describe 'When I visit a Turtorial show page' do
-	  it "I can delete a turtorial" do
+	describe 'When I visit a Tutorial show page' do
+	  it "I can delete a tutorial" do
 	    admin = create(:admin)
 	    create_list(:tutorial, 2)
 
