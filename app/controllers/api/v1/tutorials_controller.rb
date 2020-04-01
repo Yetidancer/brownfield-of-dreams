@@ -4,6 +4,12 @@ class Api::V1::TutorialsController < ApplicationController
   end
 
   def show
-    render json: Tutorial.find(params[:id])
+    tutorial = Tutorial.find(params[:id])
+    require "pry"; binding.pry
+    if (tutorial.classroom == true && current_user) || (tutorial.classroom == false)
+      render json: tutorial
+    else
+      flash[:error] = "You must log in to view this tutorial."
+    end
   end
 end
