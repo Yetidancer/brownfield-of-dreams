@@ -2,7 +2,7 @@
 <h3>Tutorials</h3>
 
 <div class="p2">
-  <%= link_to "New Tutorial", new_admin_api_v1_tutorial_path, class: "video-position-submit btn btn-outline" %>
+  <%= link_to "New Tutorial", new_admin_tutorial_path, class: "video-position-submit btn btn-outline" %>
 </div>
 
 <table class="col col-5">
@@ -14,8 +14,8 @@
     <tr class="admin-tutorial-card">
       <td><%= link_to tutorial.title, tutorial_path(tutorial) %></td>
       <td>
-        <%= link_to "Edit", edit_admin_api_v1_tutorial_path(tutorial) %> |
-        <%= link_to "Delete", admin_api_v1_tutorial_path(tutorial),
+        <%= link_to "Edit", edit_admin_tutorial_path(tutorial) %> |
+        <%= link_to "Delete", admin_tutorial_path(tutorial),
                                method: :delete,
                                data: { confirm: 'Are you sure?' } %>
       </td>

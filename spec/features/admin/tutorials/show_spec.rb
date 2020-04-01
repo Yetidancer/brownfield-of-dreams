@@ -8,7 +8,7 @@ RSpec.describe 'As a Admin' do
 
 	    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-	    visit "/admin/api/v1/dashboard"
+	    visit "/admin/dashboard"
 
 	    expect(page).to have_css('.admin-tutorial-card', count: 2)
 

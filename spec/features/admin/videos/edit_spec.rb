@@ -13,7 +13,7 @@ RSpec.describe 'As a User' do
 
 		it 'I can change the video spec' do
 
-			visit "/admin/api/v1/tutorials/#{@tutorial.id}/edit"
+			visit "/admin/tutorials/#{@tutorial.id}/edit"
 
 			expect(current_path).to eq("/admin/tutorials/#{@tutorial.id}/edit")
 
@@ -35,7 +35,7 @@ RSpec.describe 'As a User' do
 
 		it 'I can not change the video spec if it is left blank' do
 
-			visit "/admin/api/v1/tutorials/#{@tutorial.id}/edit"
+			visit "/admin/tutorials/#{@tutorial.id}/edit"
 
 			expect(current_path).to eq("/admin/tutorials/#{@tutorial.id}/edit")
 

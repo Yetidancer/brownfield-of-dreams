@@ -9,7 +9,7 @@
 
   <div class="mt1" id="new-video-form">
     <h3>New Video</h3>
-    <%= form_for [:admin, :api_v1, @tutorial, Video.new "/admin/api/v1/#{@tutorial.id}/videos/"] do |f| %>
+    <%= form_for [:admin, @tutorial, Video.new] do |f| %>
       <%= f.label :title, class: "block" %>
       <%= f.text_field :title, class: "field block"%>
       <%= f.label :description, class: "block" %>

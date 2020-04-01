@@ -11,15 +11,10 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
 
   namespace :admin do
-		namespace :api do
-			namespace :v1 do
-    		get "/dashboard", to: "dashboard#show"
-    		resources :tutorials, only: [:create, :edit, :update, :destroy, :new] do
-      		resources :videos, only: [:create]
-				end
-			end
-		end
-
+    get "/dashboard", to: "dashboard#show"
+    resources :tutorials, only: [:create, :edit, :update, :destroy, :new] do
+      resources :videos, only: [:create]
+    end
     resources :videos, only: [:edit, :update, :destroy]
 
     namespace :api do
