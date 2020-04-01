@@ -1,4 +1,4 @@
-class Admin::TutorialsController < Admin::BaseController
+class Admin::Api::V1::TutorialsController < Admin::Api::V1::BaseController
   def edit
     @tutorial = Tutorial.find(params[:id])
   end
@@ -15,7 +15,7 @@ class Admin::TutorialsController < Admin::BaseController
     if tutorial.update(tutorial_params)
       flash[:success] = "#{tutorial.title} tagged!"
     end
-    redirect_to edit_admin_tutorial_path(tutorial)
+    redirect_to edit_admin_api_v1_tutorial_path(tutorial)
   end
 
   def destroy
@@ -23,7 +23,7 @@ class Admin::TutorialsController < Admin::BaseController
     if tutorial.destroy
       flash[:success] = "#{tutorial.title} tagged!"
     end
-    redirect_to admin_dashboard_path
+    redirect_to admin_api_v1_dashboard_path
   end
 
   private

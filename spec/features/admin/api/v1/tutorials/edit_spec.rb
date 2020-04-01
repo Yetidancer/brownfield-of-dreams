@@ -8,7 +8,7 @@ RSpec.describe 'As an Admin' do
 	  scenario "by adding a video", :js, :vcr do
 	    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-	    visit edit_admin_tutorial_path(tutorial)
+	    visit edit_admin_api_v1_tutorial_path(tutorial)
 
 	    click_on "Add Video"
 
@@ -29,7 +29,7 @@ RSpec.describe 'As an Admin' do
 	  scenario "by adding a video", :js, :vcr do
 	    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-	    visit edit_admin_tutorial_path(tutorial)
+	    visit edit_admin_api_v1_tutorial_path(tutorial)
 
 	    click_on "Add Video"
 

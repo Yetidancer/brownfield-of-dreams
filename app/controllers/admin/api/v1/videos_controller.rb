@@ -1,4 +1,4 @@
-class Admin::VideosController < Admin::BaseController
+class Admin::Api::V1::VideosController < Admin::Api::V1::BaseController
   def edit
     @video = Video.find(params[:id])
   end
@@ -10,10 +10,10 @@ class Admin::VideosController < Admin::BaseController
 
 		if video.save
 			flash[:success] = "Your Video has been updated!"
-			redirect_to "/admin/tutorials/#{tutorial.id}/edit"
+			redirect_to "/admin/api/v1/tutorials/#{tutorial.id}/edit"
 		else
 			flash[:error] = 'Invalid information entered try again'
-			redirect_to "/admin/videos/#{video.id}/edit"
+			redirect_to "/admin/api/v1/videos/#{video.id}/edit"
 		end
   end
 
@@ -28,7 +28,7 @@ class Admin::VideosController < Admin::BaseController
       flash[:error] = "Unable to create video."
     end
 
-    redirect_to edit_admin_tutorial_path(id: tutorial.id)
+    redirect_to edit_admin_api_v1_tutorial_path(id: tutorial.id)
   end
 
   private
