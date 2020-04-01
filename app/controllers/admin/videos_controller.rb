@@ -1,22 +1,30 @@
 class Admin::VideosController < Admin::BaseController
   def edit
-    @video = Video.find(params[:video_id])
+    @video = Video.find(params[:id])
   end
 
   def update
     video = Video.find(params[:id])
     video.update(video_params)
+		tutorial = video.tutorial
+
+		if video.save
+			flash[:success] = "Your Video has been updated!"
+			redirect_to "/admin/tutorials/#{tutorial.id}/edit"
+		else
+			flash[:error] = 'Invalid information entered try again'
+			redirect_to "/admin/videos/#{video.id}/edit"
+		end
   end
 
   def create
-    begin
-      tutorial  = Tutorial.find(params[:tutorial_id])
-      thumbnail = YouTube::Video.by_id(new_video_params[:video_id]).thumbnail
-      video     = tutorial.videos.new(new_video_params.merge(thumbnail: thumbnail))
+    tutorial  = Tutorial.find(params[:tutorial_id])
+    thumbnail = YouTube::Video.by_id(new_video_params[:video_id]).thumbnail
+    video     = tutorial.videos.new(new_video_params.merge(thumbnail: thumbnail))
 
-      video.save
+    if video.save
       flash[:success] = "Successfully created video."
-    rescue # Sorry about this. We should get more specific instead of swallowing all errors.
+    else
       flash[:error] = "Unable to create video."
     end
 
@@ -25,7 +33,7 @@ class Admin::VideosController < Admin::BaseController
 
   private
     def video_params
-      params.permit(:position)
+      params.permit(:title, :decribe)
     end
 
     def new_video_params
