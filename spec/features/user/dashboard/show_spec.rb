@@ -209,6 +209,7 @@ RSpec.describe 'As a User' do
 		end
 
 		describe 'When I log into my dashboard, and am connected to github', :vcr do
+
 			it 'I can see my followers and people I am following and add them to my friends list' do
 
 				user1 = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: ENV["YET_GITHUB_TOKEN"], github_username: "Yetidancer")
