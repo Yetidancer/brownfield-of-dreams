@@ -52,5 +52,5 @@ Rails.application.routes.draw do
 
 	patch '/activate/:user_email', to: 'activate#update'
 
-	#get '/confirm/:id', to: 'users#edit', as: 'confirm'
+  post '/dashboard', to: 'friendships#create', as: 'create_friendship'
 end

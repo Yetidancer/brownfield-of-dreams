@@ -33,13 +33,9 @@
 		<% current_user.followers.each do |follower| %>
         <section id="follower-<%=follower[:login]%>">
     			<%= link_to "#{follower[:login]}", follower[:html_url] %>
-          <% if current_user.in_system(follower[:login]) && !current_user.friends.include?(follower[:login])%>
+          <% if current_user.in_system(follower[:login]) && !current_user.friends.include?(User.find_by(github_username: follower[:login]))%>
             <% friend = User.find_by(github_username: follower[:login]) %>
-            <%= form_tag "/friendships" do %>
-            <% text_field_tag :friend_id, "#{friend.id}", :hidden => true %>
-            <% text_field_tag :user_id, "#{current_user.id}", :hidden => true %>
-            <%= submit_tag "Add as Friend" %>
-            <% end %>
+            <%= button_to "Add as Friend", create_friendship_path(nil, friend_id: "#{friend.id}"), method: :post%>
           <% end %>
     		</section>
 
@@ -49,19 +45,16 @@
   	<% current_user.following.each do |followed| %>
   		<section id="following-<%=followed[:login]%>">
   			<%= link_to "#{followed[:login]}", followed[:html_url] %>
-        <% if current_user.in_system(followed[:login]) && !current_user.friends.include?(followed[:login])%>
+        <% if current_user.in_system(followed[:login]) && !current_user.friends.include?(User.find_by(github_username: followed[:login]))%>
           <% friend = User.find_by(github_username: followed[:login]) %>
-          <%= form_tag "/friendships" do %>
-          <% text_field_tag :friend_id, "#{friend.id}", :hidden => true %>
-          <%= submit_tag "Add as Friend" %>
-          <% end %>
+          <%= button_to "Add as Friend", create_friendship_path(nil, friend_id: "#{friend.id}"), method: :post%>
         <% end %>
   		</section>
 		<% end %>
 
     <h4>Friends</h4>
     <% current_user.friends.each do |friend|%>
-    <% account = User.find(github_username: friend) %>
+    <% account = User.find(friend.id) %>
     <%= "#{account.first_name}" %>
     <% end %>
 

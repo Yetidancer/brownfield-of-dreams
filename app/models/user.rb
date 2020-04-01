@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_secure_password
 
   def friends
-    friendships = Friendship.all.find_all {|friendship| friendship.user_id == current_user.id}
+    friendships = Friendship.all.find_all {|friendship| friendship.user_id == id}
     friends = friendships.map {|friendship| User.find(friendship.friend_id)}
     return friends
   end
