@@ -12,4 +12,16 @@ RSpec.describe 'As a User' do
 			expect(page).to have_content(video1.title)
 		end
 	end
+
+	describe 'When I delete a tutorial' do
+		it 'It deletes the associated videos as well' do
+			tutorial = create(:tutorial)
+			video1 = tutorial.videos.create!(title: "Title 1", description: "Description 1")
+
+			# require "pry"; binding.pry
+
+			tutorial.destroy
+			expect(Video.all).to eq([])
+		end
+	end
 end
