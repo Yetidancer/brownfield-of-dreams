@@ -21,10 +21,6 @@ class User < ApplicationRecord
     User.all.find {|user| user.github_username == username}
   end
 
-  def github_id
-    @github_id ||= GithubService.new.user_github_id(token)
-  end
-
 	def repos
 		@repos ||= GithubService.new.user_repos(token)
 	end
