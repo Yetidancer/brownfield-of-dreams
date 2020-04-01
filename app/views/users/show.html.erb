@@ -6,7 +6,7 @@
 		<% if current_user.activate? %>
 			<p>Status: Active</p>
 		<% else %>
-			<p>Status: Inactive</p> 
+			<p>Status: Inactive</p>
 		<% end %>
   <ul>
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
@@ -54,8 +54,10 @@
 
     <h4>Friends</h4>
     <% current_user.friends.each do |friend|%>
+		<section id='friend-<%= friend.id %>'>
     <% account = User.find(friend.id) %>
     <%= "#{account.first_name}" %>
+		</section>
     <% end %>
 
 	<% else %>

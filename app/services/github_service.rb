@@ -1,7 +1,4 @@
 class GithubService
-  def user_github_id(token)
-    get_json("user", token)[:id]
-  end
 
   def user_repos(token)
     get_json("user/repos", token).first(5)
