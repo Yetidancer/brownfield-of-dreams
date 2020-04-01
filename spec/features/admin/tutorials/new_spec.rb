@@ -1,6 +1,64 @@
 require 'rails_helper'
 
 RSpec.describe 'As an Admin' do
+	describe 'I can create a new tutorial' do
+		it 'through the new tutorial form ' do
+			admin = create(:admin)
+			tutorial_params = {title: "Hello Moto", description: "Old Cell PHone Chimes", thumbnail: "https://i.ytimg.com/vi/XzJ1WnFTVds/maxresdefault.jpg"}
+
+			allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+			visit "/admin/dashboard"
+
+			expect(page).to have_link("New Tutorial")
+
+			click_on "New Tutorial"
+
+			expect(current_path).to eq("/admin/tutorials/new")
+
+			title = tutorial_params[:title]
+			description = tutorial_params[:description]
+			thumbnail = tutorial_params[:thumbnail]
+
+			fill_in 'tutorial_title', with: title
+			fill_in 'tutorial_description', with: description
+			fill_in 'tutorial_thumbnail', with: thumbnail
+
+			click_on "Save"
+			binding.pry
+			expect(current_path).to eq("/tutorials/#{Tutorial.last.id}")
+			expect(page).to have_content("Successfully created tutorial.")
+		end
+
+		it 'through the new tutorial form unless the infromation is inaccurate ' do
+			admin = create(:admin)
+			tutorial_params = {title: "Hello Moto", description: "Old Cell PHone Chimes", thumbnail: "https://i.ytimg.com/vi/XzJ1WnFTVds/maxresdefault.jpg"}
+
+			allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+			visit "/admin/dashboard"
+
+			expect(page).to have_link("New Tutorial")
+
+			click_on "New Tutorial"
+
+			expect(current_path).to eq("/admin/tutorials/new")
+
+			title = tutorial_params[:title]
+			description = tutorial_params[:description]
+			thumbnail = tutorial_params[:thumbnail]
+
+			fill_in 'tutorial_title', with: title
+			fill_in 'tutorial_description', with: " "
+			fill_in 'tutorial_thumbnail', with: thumbnail
+
+			click_on "Save"
+
+			expect(current_path).to eq("/admin/tutorials/new")
+			expect(page).to have_content("Tutorial was not Created.")
+		end
+	end
+
 	describe 'I can add tags to tutorials' do
 	  it 'clicks on the add tag on a tutoral' do
 	    admin = create(:user, role: 1)

@@ -4,10 +4,11 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
+		
   end
 
   def new
-    # @tutorial = Tutorial.new
+  	@tutorial = Tutorial.new
   end
 
   def update
