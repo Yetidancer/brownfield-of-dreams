@@ -10,7 +10,6 @@ class FriendshipsController < ApplicationController
     else
       flash[:error] =  'Friendship not made due to error!'
     end
-    require "pry"; binding.pry
     redirect_to dashboard_path
   end
 

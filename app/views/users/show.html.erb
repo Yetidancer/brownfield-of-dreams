@@ -3,6 +3,11 @@
 
   <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
   <h3>Account Details</h3>
+		<% if current_user.activate? %>
+			<p>Status: Active</p>
+		<% else %>
+			<p>Status: Inactive</p> 
+		<% end %>
   <ul>
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
     <li> <%= current_user.email%> </li>
@@ -15,7 +20,7 @@
 	 			</article>
  			<% end %>
   </section>
-	
+
   <% if !current_user.token.nil? %>
     <h2>Github</h2>
     <% current_user.repos.each do |repo| %>
