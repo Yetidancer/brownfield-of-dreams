@@ -51,4 +51,6 @@ Rails.application.routes.draw do
   post '/friendships', to: 'friendships#create'
 
 	patch '/activate/:user_email', to: 'activate#update'
+
+	#get '/confirm/:id', to: 'users#edit', as: 'confirm'
 end
