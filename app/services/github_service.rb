@@ -12,7 +12,8 @@ class GithubService
 		get_json("user/following", token)
 	end
 
-	def self.get_user(token, user_handle)
+	def get_user(token, user_handle)
+		binding.pry
 		get_json("user/#{user_handle}", token)
 	end
 
