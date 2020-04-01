@@ -5,7 +5,8 @@ class TutorialsController < ApplicationController
 	end
 
   def show
-    @tutorial = Tutorial.find(params[:id])
-    @facade = TutorialFacade.new(@tutorial, params[:video_id])
+    # require "pry"; binding.pry
+		@tutorial = Tutorial.find(params[:id])
+		@facade = TutorialFacade.new(@tutorial, params[:video_id])
   end
 end
