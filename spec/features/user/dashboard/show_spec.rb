@@ -207,5 +207,37 @@ RSpec.describe 'As a User' do
 		    expect(page).to have_content("Already in your bookmarks")
 		  end
 		end
+
+		describe 'When I log into my dashboard, and am connected to github', :vcr do
+			it 'I can see my followers and people I am following and add them to my friends list' do
+
+				user1 = create(:user, email: "person@example.com", first_name: "Cheese", last_name: "Gecko", password: "password", token: ENV["YET_GITHUB_TOKEN"], github_username: "Yetidancer")
+				user2 = create(:user, email: "person1@example.com", first_name: "Cheesey", last_name: "Geckoy", password: "password1", token: ENV["SAS_GITHUB_TOKEN"], github_username: "sasloan")
+
+				visit '/'
+
+				click_on "Sign In"
+
+				expect(current_path).to eq(login_path)
+
+				fill_in 'session[email]', with: user1.email
+				fill_in 'session[password]', with: user1.password
+
+				click_on 'Log In'
+
+				expect(current_path).to eq(dashboard_path)
+
+				within"#follower-#{user2.github_username}" do
+		      expect(page).to have_button("Add as Friend")
+					click_on "Add as Friend"
+		    end
+
+				expect(current_path).to eq(dashboard_path)
+
+				within "#friend-#{user2.id}" do
+					expect(page).to have_content("Cheesey")
+				end
+			end
+		end
 	end
 end
