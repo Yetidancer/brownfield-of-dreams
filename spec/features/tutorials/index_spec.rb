@@ -8,8 +8,6 @@ RSpec.describe 'As a Visitor' do
 			user = User.create!(email: 'peasant@example.com', first_name: 'Lowly', last_name: 'Peasant', password:  "password", github_username: "Yetidancer")
 
 			visit '/tutorials'
-			# require "pry"; binding.pry
-			# save_and_open_page
 
 			expect(page).to have_content(non_classroom_tutorials.first.title)
 			expect(page).to have_content(non_classroom_tutorials.last.title)

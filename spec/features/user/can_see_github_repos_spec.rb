@@ -78,7 +78,6 @@ feature 'user can see their repos' do
 
     expect(page).to have_content("Github")
     expect(page).to have_css(".repo", count:5)
-save_and_open_page
     expect(page).to_not have_link("D_and_Z_Pet_Place")
     within("#follower-Yetidancer") do
       expect(page).to have_content("button")

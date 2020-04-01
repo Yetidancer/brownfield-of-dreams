@@ -5,7 +5,6 @@ class Api::V1::TutorialsController < ApplicationController
 
   def show
     tutorial = Tutorial.find(params[:id])
-    require "pry"; binding.pry
     if (tutorial.classroom == true && current_user) || (tutorial.classroom == false)
       render json: tutorial
     else
