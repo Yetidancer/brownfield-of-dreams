@@ -19,13 +19,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Tue, 31 Mar 2020 17:39:36 GMT
+      - Wed, 01 Apr 2020 18:40:55 GMT
       Date:
-      - Tue, 31 Mar 2020 17:39:36 GMT
+      - Wed, 01 Apr 2020 18:40:55 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/yr6nlJk7LNa2RcC1GxXqTk89XiI"'
+      - '"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/oNjUSL5c8Ln3RmCYUsde702AQtg"'
       Vary:
       - Origin
       - X-Origin
@@ -52,7 +52,7 @@ http_interactions:
       string: |
         {
          "kind": "youtube#videoListResponse",
-         "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/yr6nlJk7LNa2RcC1GxXqTk89XiI\"",
+         "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/oNjUSL5c8Ln3RmCYUsde702AQtg\"",
          "pageInfo": {
           "totalResults": 1,
           "resultsPerPage": 1
@@ -60,7 +60,7 @@ http_interactions:
          "items": [
           {
            "kind": "youtube#video",
-           "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/48pXvh0ZgScpZMDBw_N8IlfSnHs\"",
+           "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/xMK1rGay--P5UNpRVrtfT8Ps8wU\"",
            "id": "J7ikFUlkP_k",
            "snippet": {
             "publishedAt": "2018-07-23T20:59:59.000Z",
@@ -111,7 +111,7 @@ http_interactions:
             "projection": "rectangular"
            },
            "statistics": {
-            "viewCount": "267",
+            "viewCount": "268",
             "likeCount": "2",
             "dislikeCount": "0",
             "favoriteCount": "0",
@@ -121,5 +121,5 @@ http_interactions:
          ]
         }
     http_version: null
-  recorded_at: Tue, 31 Mar 2020 17:39:36 GMT
+  recorded_at: Wed, 01 Apr 2020 18:40:55 GMT
 recorded_with: VCR 5.1.0
