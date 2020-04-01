@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
   validates_presence_of :password
-  validates_presence_of :first_name
+  validates_presence_of :first_name, :last_name
   enum role: [:default, :admin]
   has_secure_password
 
@@ -42,4 +42,8 @@ class User < ApplicationRecord
 				.group('tutorials.id, videos.id')
 				.order('tutorials.id, videos.position')
 	end
+
+	def send_inform(email_info, user_email)
+	 	NewUserNotifierMailer.inform(email_info, user_email).deliver_now
+ 	end
 end
