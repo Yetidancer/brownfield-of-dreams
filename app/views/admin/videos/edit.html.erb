@@ -1,0 +1,12 @@
+<h2> Edit Video </h2>
+
+<%= form_tag "/admin/videos/#{@video.id}", method: :patch do %>
+
+	<p><%= label_tag :title %>
+	<%= text_field_tag :title, @video.title %></p>
+
+	<p><%= label_tag :description %>
+	<%= text_field_tag :description, @video.description %></p>
+
+	<%= submit_tag "Submit" %>
+<% end %>

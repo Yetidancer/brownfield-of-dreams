@@ -14,11 +14,12 @@ RSpec.describe 'As a User' do
 
 			click_on "Create Account"
 
-			expect(current_path).to eq(dashboard_path)
+			expect(current_path).to eq("/users")
+			# expect(page).to have_content("An email has been sent to your inbox. please check it now.")
 		end
 
 		it 'I can not make two users with the same log in' do
-			user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0)
+			user = User.create!(email: "user@email.com", password: 'password', first_name:'Jim', last_name: "Smith", role: 0)
 
 			visit '/users/new'
 

@@ -21,13 +21,11 @@ http_interactions:
       message: OK
     headers:
       X-Guploader-Uploadid:
-      - AEnB2Ur5prd-MmEGN1wJeEq7ql13AESardWJC9k5uvLWMSGg3StpjhdzCizVWJHIBXPfdxPsOlphzjUN0EOvFLvwUbKpBq_RZg
+      - AEnB2UryFn1zgxOnFStvnp0V2gWMnAfZGJr0uLYi-xvjC8s323OJ7K2VzJPGqsB3LEb-Kenn9JbVK2rheNl0RhHfbxeg8srQx-wge20Y82Jhq5czxijThqU
       Expires:
-      - Mon, 30 Mar 2020 23:57:21 GMT
+      - Tue, 31 Mar 2020 18:28:29 GMT
       Date:
-      - Mon, 30 Mar 2020 22:57:21 GMT
-      Cache-Control:
-      - public, max-age=3600
+      - Tue, 31 Mar 2020 17:28:29 GMT
       Last-Modified:
       - Thu, 13 Feb 2020 19:33:45 GMT
       Etag:
@@ -55,6 +53,10 @@ http_interactions:
       - '13'
       Server:
       - UploadServer
+      Cache-Control:
+      - public, max-age=3600
+      Age:
+      - '2795'
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
         ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
@@ -63,5 +65,5 @@ http_interactions:
       encoding: UTF-8
       string: 80.0.3987.106
     http_version: null
-  recorded_at: Mon, 30 Mar 2020 22:57:21 GMT
+  recorded_at: Tue, 31 Mar 2020 18:15:04 GMT
 recorded_with: VCR 5.1.0

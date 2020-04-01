@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
   validates_presence_of :password
-  validates_presence_of :first_name
+  validates_presence_of :first_name, :last_name
   enum role: [:default, :admin]
   has_secure_password
 
@@ -21,10 +21,6 @@ class User < ApplicationRecord
     User.all.find {|user| user.github_username == username}
   end
 
-  def github_id
-    @github_id ||= GithubService.new.user_github_id(token)
-  end
-
 	def repos
 		@repos ||= GithubService.new.user_repos(token)
 	end
@@ -36,4 +32,14 @@ class User < ApplicationRecord
 	def following
 		@following ||= GithubService.new.user_following(token)
 	end
+
+	def bookmarked_segments
+	videos.joins(:tutorial)
+				.group('tutorials.id, videos.id')
+				.order('tutorials.id, videos.position')
+	end
+
+	def send_inform(email_info, user_email)
+	 	NewUserNotifierMailer.inform(email_info, user_email).deliver_now
+ 	end
 end

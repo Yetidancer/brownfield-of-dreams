@@ -3,13 +3,24 @@
 
   <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
   <h3>Account Details</h3>
+		<% if current_user.activate? %>
+			<p>Status: Active</p>
+		<% else %>
+			<p>Status: Inactive</p>
+		<% end %>
   <ul>
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
     <li> <%= current_user.email%> </li>
   </ul>
   <section>
     <h1>Bookmarked Segments</h1>
+			<% current_user.bookmarked_segments.each.with_index do |bookmark, i| %>
+	 			<article id="bookmark-<%= i+1 %>">
+		 			<p><%= bookmark.title %></p>
+	 			</article>
+ 			<% end %>
   </section>
+
   <% if !current_user.token.nil? %>
     <h2>Github</h2>
     <% current_user.repos.each do |repo| %>
@@ -43,8 +54,10 @@
 
     <h4>Friends</h4>
     <% current_user.friends.each do |friend|%>
+		<section id='friend-<%= friend.id %>'>
     <% account = User.find(friend.id) %>
     <%= "#{account.first_name}" %>
+		</section>
     <% end %>
 
 	<% else %>
