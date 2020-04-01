@@ -12,6 +12,10 @@ class GithubService
 		get_json("user/following", token)
 	end
 
+	def get_user(token, user_handle)
+		get_json("user/#{user_handle}", token)
+	end
+
   private
 
   def get_json(url, token)
