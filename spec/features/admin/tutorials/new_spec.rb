@@ -57,7 +57,9 @@ RSpec.describe 'As an Admin' do
 			click_on "Save"
 
 			expect(current_path).to eq("/admin/tutorials/new")
-			expect(page).to have_content("Tutorial was not Created.")
+			expect(page).to have_content("Title can't be blank")
+			expect(page).to have_content("Description can't be blank")
+
 		end
 	end
 
