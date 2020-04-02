@@ -25,7 +25,7 @@ RSpec.describe 'As an Admin' do
 			fill_in 'tutorial_thumbnail', with: thumbnail
 
 			click_on "Save"
-require "pry"; binding.pry
+
 			new_tutorial = Tutorial.last.id
 
 			expect(current_path).to eq("/tutorials/#{new_tutorial}")

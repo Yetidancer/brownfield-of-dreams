@@ -4,8 +4,7 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
-    require "pry"; binding.pry
-		tutorial = Tutorial.create!(new_tutorial_params)
+		tutorial = Tutorial.new(tutorial_params)
 
 		if tutorial.save
 			redirect_to "/tutorials/#{tutorial.id}"
@@ -42,6 +41,6 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
 	def new_tutorial_params
-		params[:tutorial].permit(:title, :description, :thumbnail)
+		params.permit(:title, :description, :thumbnail)
 	end
 end
