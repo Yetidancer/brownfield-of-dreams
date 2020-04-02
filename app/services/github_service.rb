@@ -13,7 +13,6 @@ class GithubService
 	end
 
 	def get_user(token, user_handle)
-    # require "pry"; binding.pry
     get_json("users/#{user_handle}", token)
 	end
 

@@ -10,7 +10,6 @@ class InviteController < ApplicationController
     invitation = EmailInvitation.new(current_user.first_name, recipient)
 
     if invitation.email
-			require "pry"; binding.pry
       InvitationNotifierMailer.inform(invitation).deliver_now
       flash[:notice] = 'Successfully sent invite!'
     else

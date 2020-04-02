@@ -10,7 +10,7 @@ RSpec.describe GithubUser do
 
     user = GithubUser.new(user_params)
 
-    expect(user.user_name).to eq(user_params[:login])
+    expect(user.username).to eq(user_params[:login])
     expect(user.profile_url).to eq(user_params[:html_url])
     expect(user.email).to eq(user_params[:email])
   end

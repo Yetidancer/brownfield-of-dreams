@@ -6,10 +6,10 @@ RSpec.describe EmailInvitation do
     user = GithubUser.new(name: 'Joseph Joestar',
       email: 'email@example.com')
 
-    user = EmailInvitation.new(sender_name, user)
+    invitation = EmailInvitation.new(sender_name, user)
 
-    expect(user.sender).to eq(sender_name)
-    expect(user.recipient).to eq(user.name)
-    expect(user.email).to eq(user.email)
+    expect(invitation.sender).to eq(sender_name)
+    expect(invitation.recipient).to eq(user.name)
+    expect(invitation.email).to eq(user.email)
   end
 end

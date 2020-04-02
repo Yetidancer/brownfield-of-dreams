@@ -1,5 +1,5 @@
 class GithubUser
-  attr_reader :user_name,
+  attr_reader :username,
               :profile_url,
               :email,
               :name
