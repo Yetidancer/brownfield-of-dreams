@@ -15,6 +15,7 @@ describe 'As a registered user' do
       end
 
       it 'I can invite a user that has an email address associated with their github account', :vcr do
+        #will not pass as github api call will not return user emails
         fill_in 'github_handle', with: 'sasloan'
 
         click_button 'Send Invite'
