@@ -4,15 +4,15 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
-		tutorial = Tutorial.new(new_tutorial_params)
     require "pry"; binding.pry
+		tutorial = Tutorial.create!(new_tutorial_params)
 
 		if tutorial.save
 			redirect_to "/tutorials/#{tutorial.id}"
 			flash[:success] = "Successfully created tutorial."
 		else
 			redirect_to "/admin/tutorials/new"
-			flash[:error] = "Tutorial was not Created."
+			flash[:notice] = tutorial.errors.full_messages.to_sentence
 		end
   end
 
@@ -42,6 +42,6 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
 	def new_tutorial_params
-		params.permit(:title, :description, :thumbnail)
+		params[:tutorial].permit(:title, :description, :thumbnail)
 	end
 end
