@@ -1,13 +1,16 @@
 class InviteController < ApplicationController
+	skip_before_action :verify_authenticity_token
 
 	def new
 	end
 
   def create
-    response = GithubService.get_user(current_user.token, params[:github_handle])
-    invitation = EmailInvitation.new(current_user.first_name, response.params[:github_handle])
+    recipient_github = GithubService.new.get_user(current_user.token, params[:github_handle])
+		recipient = GithubUser.new(recipient_github)
+    invitation = EmailInvitation.new(current_user.first_name, recipient)
 
     if invitation.email
+			require "pry"; binding.pry
       InvitationNotifierMailer.inform(invitation).deliver_now
       flash[:notice] = 'Successfully sent invite!'
     else

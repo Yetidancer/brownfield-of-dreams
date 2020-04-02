@@ -1,11 +1,13 @@
 class EmailInvitation
-  attr_reader :name,
+  attr_reader :recipient,
               :email,
-              :sender_name
+              :sender
 
-  def initialize(sender_name, recp_args)
-    @sender_name = sender_name
-    @name = recp_args[:name]
-    @email = recp_args[:email]
+  def initialize(sender_name, recipient)
+    require "pry"; binding.pry
+    # @email = recipient.email
+    @email = 'clarkzeke@gmail.com'
+    @recipient = recipient.name
+    @sender = sender_name
   end
 end

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def show
   end
 
@@ -14,6 +16,7 @@ class UsersController < ApplicationController
 			flash[:notice] = "This account has not yet been activated. Please check your email."
       redirect_post('/authorization')
     else
+      require "pry"; binding.pry
       flash[:error] = 'Username already exists'
       redirect_to "/users/new"
     end
