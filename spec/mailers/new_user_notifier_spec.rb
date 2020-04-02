@@ -7,7 +7,7 @@ RSpec.describe NewUserNotifierMailer, type: :mailer do
 			@email_info = {user: @user, message: "Hello World"}
 		end
 
-		let(:mail) { described_class.inform(@email_info, @user).deliver_now }
+		let(:mail) { described_class.inform(@email_info).deliver_now }
 
     it 'renders the subject' do
       expect(mail.subject).to eq("#{@email_info[:user].first_name}, Please Authenticate your account.")

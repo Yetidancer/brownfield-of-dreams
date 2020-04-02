@@ -1,13 +1,11 @@
-class NotificationsController < ApplicationController
+class AuthorizeController < ApplicationController
 
   def create
-    @authorization = AthorizationGenerator.new
-    @user_email = current_user.email
-    @email_info = {user: current_user,
-                  message: @authorization.message
+    @email_info = {user: current_user
                  }
-    NewUserNotifierMailer.inform(email_info, user_email).deliver_now
-    flash[:notice] = "An email has been sent to your inbox. please check it now."
+
+    NewUserNotifierMailer.inform(@email_info).deliver_now
+    flash[:notice] = "An email has been sent to your inbox. Please check it now."
     redirect_to '/users'
   end
 end

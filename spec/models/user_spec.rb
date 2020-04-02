@@ -56,7 +56,7 @@ RSpec.describe User, type: :model do
 			user = create(:user, token: ENV['TEST_KEY'])
 			email_info = {user: user, message: "Hello World"}
 
-	 		expect { subject.send_inform(email_info, user) }
+	 		expect { subject.send_inform(email_info) }
 		 .to change { ActionMailer::Base.deliveries.count }.by(1)
  		end
   end

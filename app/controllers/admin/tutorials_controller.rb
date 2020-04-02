@@ -11,7 +11,7 @@ class Admin::TutorialsController < Admin::BaseController
 			flash[:success] = "Successfully created tutorial."
 		else
 			redirect_to "/admin/tutorials/new"
-			flash[:error] = "Tutorial was not Created."
+			flash[:notice] = tutorial.errors.full_messages.to_sentence
 		end
   end
 
@@ -41,6 +41,6 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
 	def new_tutorial_params
-		params.permit(:title, :description, :thumbnail)
+		params[:tutorial].permit(:title, :description, :thumbnail)
 	end
 end
