@@ -4,7 +4,7 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
-		tutorial = Tutorial.create(new_tutorial_params)
+		tutorial = Tutorial.new(tutorial_params)
 
 		if tutorial.save
 			redirect_to "/tutorials/#{tutorial.id}"
