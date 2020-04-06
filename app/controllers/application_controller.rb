@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This is a class
 class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :find_bookmark

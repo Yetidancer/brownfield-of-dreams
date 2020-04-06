@@ -1,5 +1,7 @@
-class TutorialsController < ApplicationController
+# frozen_string_literal: true
 
+# This is a class
+class TutorialsController < ApplicationController
 	def index
 		@tutorials = Tutorial.all
 	end

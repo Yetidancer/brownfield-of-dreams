@@ -1,20 +1,22 @@
-class GithubService
+# frozen_string_literal: true
 
+# This is a class
+class GithubService
   def user_repos(token)
-    get_json("user/repos", token).first(5)
+    get_json('user/repos', token).first(5)
   end
 
-	def user_followers(token)
-		get_json("user/followers", token)
-	end
+  def user_followers(token)
+    get_json('user/followers', token)
+  end
 
-	def user_following(token)
-		get_json("user/following", token)
-	end
+  def user_following(token)
+    get_json('user/following', token)
+  end
 
-	def get_user(token, user_handle)
+  def get_user(token, user_handle)
     get_json("users/#{user_handle}", token)
-	end
+  end
 
   private
 
@@ -24,7 +26,7 @@ class GithubService
   end
 
   def conn(token)
-    Faraday.new(url: "https://api.github.com") do |f|
+    Faraday.new(url: 'https://api.github.com') do |f|
       f.headers[:authorization] = "token #{token}"
     end
   end

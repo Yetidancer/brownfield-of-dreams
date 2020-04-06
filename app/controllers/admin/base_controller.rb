@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This is a class
 class Admin::BaseController < ApplicationController
   before_action :require_admin!
 

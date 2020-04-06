@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This is a class
 class Admin::VideosController < Admin::BaseController
   def edit
     @video = Video.find(params[:id])
@@ -6,32 +9,33 @@ class Admin::VideosController < Admin::BaseController
   def update
     video = Video.find(params[:id])
     video.update(video_params)
-		tutorial = video.tutorial
+  tutorial = video.tutorial
 
-		if video.save
-			flash[:success] = "Your Video has been updated!"
-			redirect_to "/admin/tutorials/#{tutorial.id}/edit"
-		else
-			flash[:error] = 'Invalid information entered try again'
-			redirect_to "/admin/videos/#{video.id}/edit"
-		end
+  if video.save
+  flash[:success] = 'Your Video has been updated!'
+  redirect_to "/admin/tutorials/#{tutorial.id}/edit"
+  else
+  flash[:error] = 'Invalid information entered try again'
+  redirect_to "/admin/videos/#{video.id}/edit"
+  end
   end
 
-  def create
-    tutorial  = Tutorial.find(params[:tutorial_id])
+  def create###
+    tutorial = Tutorial.find(params[:tutorial_id])
     thumbnail = YouTube::Video.by_id(new_video_params[:video_id]).thumbnail
-    video     = tutorial.videos.new(new_video_params.merge(thumbnail: thumbnail))
+    video = tutorial.videos.new(new_video_params.merge(thumbnail: thumbnail))
 
     if video.save
-      flash[:success] = "Successfully created video."
+      flash[:success] = 'Successfully created video.'
     else
-      flash[:error] = "Unable to create video."
+      flash[:error] = 'Unable to create video.'
     end
 
     redirect_to edit_admin_tutorial_path(id: tutorial.id)
   end
 
   private
+
     def video_params
       params.permit(:title, :decribe)
     end

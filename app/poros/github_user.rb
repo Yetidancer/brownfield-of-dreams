@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This is a class
 class GithubUser
   attr_reader :username,
               :profile_url,
@@ -6,8 +9,8 @@ class GithubUser
 
   def initialize(args)
     @name = args[:name]
-    @username   = args[:login]
+    @username = args[:login]
     @profile_url = args[:html_url]
-    @email       = args[:email]
+    @email = args[:email]
   end
 end

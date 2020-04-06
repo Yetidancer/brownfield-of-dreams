@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module YouTube
+  # This is a class
   class Video
     attr_reader :thumbnail
 
