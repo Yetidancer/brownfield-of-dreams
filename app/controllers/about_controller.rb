@@ -2,6 +2,5 @@
 
 # This is a class
 class AboutController < ApplicationController
-  def show
-  end
+  def show; end
 end

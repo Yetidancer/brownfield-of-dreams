@@ -2,7 +2,7 @@
 
 # This is a class
 class Tutorial < ApplicationRecord
-	validates_presence_of :title, :description
+  validates_presence_of :title, :description
 
   has_many :videos, -> { order(position: :ASC) }, dependent: :destroy
   acts_as_taggable_on :tags, :tag_list

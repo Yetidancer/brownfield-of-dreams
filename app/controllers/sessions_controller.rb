@@ -17,8 +17,8 @@ class SessionsController < ApplicationController
     end
   end
 
-	def update
-		user_info = request.env['omniauth.auth']
+  def update
+    user_info = request.env['omniauth.auth']
     user = User.find(current_user.id)
 
     user.update_attributes(
@@ -26,8 +26,8 @@ class SessionsController < ApplicationController
       github_username: user_info[:extra][:raw_info][:login]
     )
 
-		redirect_to dashboard_path
-	end
+    redirect_to dashboard_path
+  end
 
   def destroy
     session[:user_id] = nil

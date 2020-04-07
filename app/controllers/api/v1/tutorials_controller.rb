@@ -11,10 +11,10 @@ class Api
       def show
         tutorial = Tutorial.find(params[:id])
         if (tutorial.classroom == true && current_user) ||
-          (tutorial.classroom == false)
+        (tutorial.classroom == false)
           render json: tutorial
         else
-          flash[:error] = "You must log in to view this tutorial."
+          flash[:error] = 'You must log in to view this tutorial.'
         end
       end
     end
