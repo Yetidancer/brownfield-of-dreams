@@ -9,6 +9,6 @@ class NewUserNotifierMailer < ApplicationMailer
         @email_info[:user].email.to_s,
       subject:
         "#{@email_info[:user].first_name}, Please Authenticate your account."
-        )
+    )
   end
 end

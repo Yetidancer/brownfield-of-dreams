@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   def friends
     friendships =
-    Friendship.all.find_all { |friendship| friendship.user_id == id }
+      Friendship.all.find_all { |friendship| friendship.user_id == id }
     friends = friendships.map { |friendship| User.find(friendship.friend_id) }
     friends
   end
@@ -38,10 +38,11 @@ class User < ApplicationRecord
   end
 
   def bookmarked_segments
-    videos.joins(:tutorial).group('tutorials.id, videos.id').order('tutorials.id, videos.position')
+    videos.joins(:tutorial).group('tutorials.id,
+      videos.id').order('tutorials.id, videos.position')
   end
 
   def send_inform(email_info)
-     NewUserNotifierMailer.inform(email_info).deliver_now
+    NewUserNotifierMailer.inform(email_info).deliver_now
   end
 end

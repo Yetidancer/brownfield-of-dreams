@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# This is a class
 class Api
   class V1
+    # This is a class
     class TutorialsController < ApplicationController
       def index
         render json: Tutorial.all
@@ -11,7 +11,7 @@ class Api
       def show
         tutorial = Tutorial.find(params[:id])
         if (tutorial.classroom == true && current_user) ||
-        (tutorial.classroom == false)
+           (tutorial.classroom == false)
           render json: tutorial
         else
           flash[:error] = 'You must log in to view this tutorial.'

@@ -9,6 +9,6 @@ class InvitationNotifierMailer < ApplicationMailer
         invitation.email,
       subject:
         "#{invitation.sender} is inviting you to join Brownfield of Dreams."
-      )
+    )
   end
 end

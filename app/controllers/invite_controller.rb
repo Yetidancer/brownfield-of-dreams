@@ -6,7 +6,7 @@ class InviteController < ApplicationController
 
   def new; end
 
-  def create###
+  def create
     recipient_github = GithubService.new.get_user(
       current_user.token, params[:github_handle]
     )
